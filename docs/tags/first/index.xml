@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>First on Cybersec Blog</title>
-    <link>https://example.org/tags/first/</link>
+    <link>https://volreuomo.github.io/blog/tags/first/</link>
     <description>Recent content in First on Cybersec Blog</description>
     <generator>Hugo -- 0.139.3</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 15 Sep 2020 11:30:03 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/first/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://volreuomo.github.io/blog/tags/first/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My 1st post</title>
-      <link>https://example.org/posts/cosafaccio/</link>
+      <link>https://volreuomo.github.io/blog/posts/cosafaccio/</link>
       <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
-      <guid>https://example.org/posts/cosafaccio/</guid>
+      <guid>https://volreuomo.github.io/blog/posts/cosafaccio/</guid>
       <description>Desc Text.</description>
     </item>
     <item>
       <title>My 2ts post</title>
-      <link>https://example.org/posts/roma/</link>
+      <link>https://volreuomo.github.io/blog/posts/roma/</link>
       <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
-      <guid>https://example.org/posts/roma/</guid>
+      <guid>https://volreuomo.github.io/blog/posts/roma/</guid>
       <description>Desc Text.</description>
     </item>
     <item>
       <title>My 3ts post</title>
-      <link>https://example.org/posts/casa/</link>
+      <link>https://volreuomo.github.io/blog/posts/casa/</link>
       <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
-      <guid>https://example.org/posts/casa/</guid>
+      <guid>https://volreuomo.github.io/blog/posts/casa/</guid>
       <description>Desc Text.</description>
     </item>
   </channel>

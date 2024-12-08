@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Cybersec Blog</title>
-    <link>https://example.org/posts/</link>
+    <link>https://volreuomo.github.io/blog/posts/</link>
     <description>Recent content in Posts on Cybersec Blog</description>
     <generator>Hugo -- 0.139.3</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 15 Sep 2020 11:30:03 +0000</lastBuildDate>
-    <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://volreuomo.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My 1st post</title>
-      <link>https://example.org/posts/cosafaccio/</link>
+      <link>https://volreuomo.github.io/blog/posts/cosafaccio/</link>
       <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
-      <guid>https://example.org/posts/cosafaccio/</guid>
+      <guid>https://volreuomo.github.io/blog/posts/cosafaccio/</guid>
       <description>Desc Text.</description>
     </item>
     <item>
       <title>My 2ts post</title>
-      <link>https://example.org/posts/roma/</link>
+      <link>https://volreuomo.github.io/blog/posts/roma/</link>
       <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
-      <guid>https://example.org/posts/roma/</guid>
+      <guid>https://volreuomo.github.io/blog/posts/roma/</guid>
       <description>Desc Text.</description>
     </item>
     <item>
       <title>My 3ts post</title>
-      <link>https://example.org/posts/casa/</link>
+      <link>https://volreuomo.github.io/blog/posts/casa/</link>
       <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
-      <guid>https://example.org/posts/casa/</guid>
+      <guid>https://volreuomo.github.io/blog/posts/casa/</guid>
       <description>Desc Text.</description>
     </item>
     <item>
       <title></title>
-      <link>https://example.org/posts/hack-the-box/wow/</link>
+      <link>https://volreuomo.github.io/blog/posts/hack-the-box/wow/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/hack-the-box/wow/</guid>
+      <guid>https://volreuomo.github.io/blog/posts/hack-the-box/wow/</guid>
       <description>&lt;h1 id=&#34;attacking-web-apps-with-ffuf&#34;&gt;Attacking Web Apps with ffuf&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;#basic-fuzzing&#34;&gt;Basic Fuzzing&lt;/a&gt;&lt;/li&gt;
@@ -64,9 +64,9 @@
     </item>
     <item>
       <title></title>
-      <link>https://example.org/posts/readme/</link>
+      <link>https://volreuomo.github.io/blog/posts/readme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/readme/</guid>
+      <guid>https://volreuomo.github.io/blog/posts/readme/</guid>
       <description>&lt;h1 id=&#34;200-301-ccna&#34;&gt;200-301 CCNA&lt;/h1&gt;
 &lt;p&gt;Notes for the &lt;a href=&#34;https://www.youtube.com/playlist?list=PLh94XVT4dq02frQRRZBHzvj2hwuhzSByN&#34;&gt;200-301 CCNA Training from YouTube&lt;/a&gt; and &lt;a href=&#34;https://www.udemy.com/course/ccna-complete/&#34;&gt;Cisco CCNA 200-301&lt;/a&gt; courses:&lt;/p&gt;
 &lt;ol&gt;

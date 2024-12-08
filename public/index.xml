@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Cybersec Blog</title>
+    <link>https://example.org/</link>
+    <description>Recent content on Cybersec Blog</description>
+    <generator>Hugo -- 0.139.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Sep 2020 11:30:03 +0000</lastBuildDate>
+    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My 1st post</title>
+      <link>https://example.org/posts/cosafaccio/</link>
+      <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
+      <guid>https://example.org/posts/cosafaccio/</guid>
+      <description>Desc Text.</description>
+    </item>
+    <item>
+      <title>My 2ts post</title>
+      <link>https://example.org/posts/roma/</link>
+      <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
+      <guid>https://example.org/posts/roma/</guid>
+      <description>Desc Text.</description>
+    </item>
+    <item>
+      <title>My 3ts post</title>
+      <link>https://example.org/posts/casa/</link>
+      <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
+      <guid>https://example.org/posts/casa/</guid>
+      <description>Desc Text.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://example.org/posts/hack-the-box/wow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/hack-the-box/wow/</guid>
+      <description>&lt;h1 id=&#34;attacking-web-apps-with-ffuf&#34;&gt;Attacking Web Apps with ffuf&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#basic-fuzzing&#34;&gt;Basic Fuzzing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#domain-fuzzing&#34;&gt;Domain Fuzzing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#parameter-fuzzing&#34;&gt;Parameter Fuzzing&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;basic-fuzzing&#34;&gt;Basic Fuzzing&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Fuzzing - testing technique that sends various types of user input to an interface and check its reaction&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Directory fuzzing:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt:FUZZ -u http://94.237.63.93:35182/FUZZ -s
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# -s for silent&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Page fuzzing:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# fuzz extensions with a common term like &amp;#39;index&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# we can also use two wordlists if needed&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ffuf -w /usr/share/seclists/Discovery/Web-Content/web-extensions.txt:FUZZ -u http://94.237.63.93:35182/blog/indexFUZZ -s
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# checking for files with php extension&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt:FUZZ -u http://94.237.63.93:35182/blog/FUZZ.php -s
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Recursive fuzzing:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://example.org/posts/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/readme/</guid>
+      <description>&lt;h1 id=&#34;200-301-ccna&#34;&gt;200-301 CCNA&lt;/h1&gt;
+&lt;p&gt;Notes for the &lt;a href=&#34;https://www.youtube.com/playlist?list=PLh94XVT4dq02frQRRZBHzvj2hwuhzSByN&#34;&gt;200-301 CCNA Training from YouTube&lt;/a&gt; and &lt;a href=&#34;https://www.udemy.com/course/ccna-complete/&#34;&gt;Cisco CCNA 200-301&lt;/a&gt; courses:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#network-fundamentals&#34;&gt;Network Fundamentals&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ip-address&#34;&gt;IP Address&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#networking-devices-and-protocols&#34;&gt;Networking Devices and Protocols&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#cisco-ios&#34;&gt;Cisco IOS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#switches&#34;&gt;Switches&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#vlans&#34;&gt;VLANs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#vtp&#34;&gt;VTP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#dtp&#34;&gt;DTP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#switchport-security&#34;&gt;Switchport Security&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#routers-and-routing&#34;&gt;Routers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#rip-routing&#34;&gt;RIP Routing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#routing-advanced&#34;&gt;Routing Advanced&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ipv6&#34;&gt;IPv6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#acl&#34;&gt;ACL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#nat--pat&#34;&gt;NAT &amp;amp; PAT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#troubleshooting-techniques&#34;&gt;Troubleshooting Techniques&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#cdp-syslog--ntp&#34;&gt;CDP, Syslog &amp;amp; NTP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#password-reset--licensing&#34;&gt;Password Reset &amp;amp; Licensing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#stp&#34;&gt;STP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#rstp&#34;&gt;RSTP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#portfast-and-bpdu-guard&#34;&gt;PortFast and BPDU Guard&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#other-stp-modes&#34;&gt;Other STP Modes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#etherchannel&#34;&gt;EtherChannel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#eigrp&#34;&gt;EIGRP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ospf&#34;&gt;OSPF&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#hsrp&#34;&gt;HSRP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#qos&#34;&gt;QoS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#network-automation--programmability&#34;&gt;Network Automation &amp;amp; Programmability&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#task-1---router-configuration&#34;&gt;Task 1 - Router Configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#task-2---router-switch-configuration&#34;&gt;Task 2 - Router Switch Configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#task-3---vlans&#34;&gt;Task 3 - VLANs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#task-4---router-on-a-stick&#34;&gt;Task 4 - Router on a Stick&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#task-5---static-routing&#34;&gt;Task 5 - Static Routing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#task-6---nat-and-pat&#34;&gt;Task 6 - NAT and PAT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#task-7---ipv6-routing&#34;&gt;Task 7 - IPv6 Routing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#task-8---dns--dhcp&#34;&gt;Task 8 - DNS &amp;amp; DHCP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#task-9---snmp--syslog&#34;&gt;Task 9 - SNMP &amp;amp; Syslog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#task-10---ntp&#34;&gt;Task 10 - NTP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#task-11---etherchannel&#34;&gt;Task 11 - EtherChannel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#task-12---rip--eigrp&#34;&gt;Task 12 - RIP &amp;amp; EIGRP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#task-13---ospf&#34;&gt;Task 13 - OSPF&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#task-14---hsrp&#34;&gt;Task 14 - HSRP&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;network-fundamentals&#34;&gt;Network Fundamentals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Network - multiple computers linked to share resources and communicate; common types include LAN (Local Area Network) and WAN (Wide Area Network).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

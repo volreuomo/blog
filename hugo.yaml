@@ -2,3 +2,6 @@ baseURL: https://volreuomo.github.io/blog/
 languageCode: en-us
 title: Cybersec Blog
 theme : ["PaperMod"]
+params:
+  assets:
+    disableFingerprinting: true

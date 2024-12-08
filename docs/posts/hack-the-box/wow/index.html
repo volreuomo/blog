@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Cybersec Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="Attacking Web Apps with ffuf
+
+Basic Fuzzing
+Domain Fuzzing
+Parameter Fuzzing
+
+Basic Fuzzing
+
+
+Fuzzing - testing technique that sends various types of user input to an interface and check its reaction
+
+
+Directory fuzzing:
+ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt:FUZZ -u http://94.237.63.93:35182/FUZZ -s
+# -s for silent
+
+
+Page fuzzing:
+# fuzz extensions with a common term like &#39;index&#39;
+# we can also use two wordlists if needed
+ffuf -w /usr/share/seclists/Discovery/Web-Content/web-extensions.txt:FUZZ -u http://94.237.63.93:35182/blog/indexFUZZ -s
+
+# checking for files with php extension
+ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt:FUZZ -u http://94.237.63.93:35182/blog/FUZZ.php -s
+
+
+Recursive fuzzing:">
+<meta name="author" content="">
+<link rel="canonical" href="https://example.org/posts/hack-the-box/wow/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d72444526d7ecbdb0015438a7fa89054a658bf759d0542e2e5df81ce94b493ee.css" integrity="sha256-1yREUm1&#43;y9sAFUOKf6iQVKZYv3WdBULi5d&#43;BzpS0k&#43;4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://example.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://example.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://example.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://example.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://example.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://example.org/posts/hack-the-box/wow/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://example.org/posts/hack-the-box/wow/">
+  <meta property="og:site_name" content="Cybersec Blog">
+  <meta property="og:title" content="Cybersec Blog">
+  <meta property="og:description" content="Attacking Web Apps with ffuf Basic Fuzzing Domain Fuzzing Parameter Fuzzing Basic Fuzzing Fuzzing - testing technique that sends various types of user input to an interface and check its reaction
+Directory fuzzing:
+ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt:FUZZ -u http://94.237.63.93:35182/FUZZ -s # -s for silent Page fuzzing:
+# fuzz extensions with a common term like &#39;index&#39; # we can also use two wordlists if needed ffuf -w /usr/share/seclists/Discovery/Web-Content/web-extensions.txt:FUZZ -u http://94.237.63.93:35182/blog/indexFUZZ -s # checking for files with php extension ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt:FUZZ -u http://94.237.63.93:35182/blog/FUZZ.php -s Recursive fuzzing:">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="Attacking Web Apps with ffuf
+
+Basic Fuzzing
+Domain Fuzzing
+Parameter Fuzzing
+
+Basic Fuzzing
+
+
+Fuzzing - testing technique that sends various types of user input to an interface and check its reaction
+
+
+Directory fuzzing:
+ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt:FUZZ -u http://94.237.63.93:35182/FUZZ -s
+# -s for silent
+
+
+Page fuzzing:
+# fuzz extensions with a common term like &#39;index&#39;
+# we can also use two wordlists if needed
+ffuf -w /usr/share/seclists/Discovery/Web-Content/web-extensions.txt:FUZZ -u http://94.237.63.93:35182/blog/indexFUZZ -s
+
+# checking for files with php extension
+ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt:FUZZ -u http://94.237.63.93:35182/blog/FUZZ.php -s
+
+
+Recursive fuzzing:">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://example.org/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "https://example.org/posts/hack-the-box/wow/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Attacking Web Apps with ffuf Basic Fuzzing Domain Fuzzing Parameter Fuzzing Basic Fuzzing Fuzzing - testing technique that sends various types of user input to an interface and check its reaction\nDirectory fuzzing:\nffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt:FUZZ -u http://94.237.63.93:35182/FUZZ -s # -s for silent Page fuzzing:\n# fuzz extensions with a common term like \u0026#39;index\u0026#39; # we can also use two wordlists if needed ffuf -w /usr/share/seclists/Discovery/Web-Content/web-extensions.txt:FUZZ -u http://94.237.63.93:35182/blog/indexFUZZ -s # checking for files with php extension ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt:FUZZ -u http://94.237.63.93:35182/blog/FUZZ.php -s Recursive fuzzing:\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Attacking Web Apps with ffuf Basic Fuzzing Domain Fuzzing Parameter Fuzzing Basic Fuzzing Fuzzing - testing technique that sends various types of user input to an interface and check its reaction\nDirectory fuzzing:\nffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt:FUZZ -u http://94.237.63.93:35182/FUZZ -s # -s for silent Page fuzzing:\n# fuzz extensions with a common term like 'index' # we can also use two wordlists if needed ffuf -w /usr/share/seclists/Discovery/Web-Content/web-extensions.txt:FUZZ -u http://94.237.63.93:35182/blog/indexFUZZ -s # checking for files with php extension ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt:FUZZ -u http://94.237.63.93:35182/blog/FUZZ.php -s Recursive fuzzing:\nffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt:FUZZ -u http://94.237.63.93:35182/FUZZ -recursion -recursion-depth 1 -e .php -v -s # recursive depth can be increased, but will take more time # -e to specify extension # check with other directories like /blog and /forum manually as well Domain Fuzzing For IP-to-domain mapping, we can add domain names to local file using sudo sh -c 'echo \"SERVER_IP academy.htb\" \u003e\u003e /etc/hosts'; then we can visit the website at http://academy.htb:PORT\nSub-domain fuzzing:\n# search for websites in format *.inlanefreight.com ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u https://FUZZ.inlanefreight.com/ -s Vhost fuzzing:\n# vhost is a subdomain on same server with same IP # but single IP can have multiple websites # vhosts may or may not have public DNS records, unlike subdomains which have public DNS records # here we are fuzzing HTTP headers ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u http://academy.htb:35182/ -H 'Host: FUZZ.academy.htb' # this will give incorrect results, so we need to filter by size ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u http://academy.htb:35182/ -H 'Host: FUZZ.academy.htb' -fs 986 # once we get the result, we can add that page to /etc/hosts file as well Parameter Fuzzing GET Request fuzzing:\n# fuzzing for parameters added in URL ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://admin.academy.htb:35182/admin/admin.php?FUZZ=key # again, filter by correct size to get correct response ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://admin.academy.htb:35182/admin/admin.php?FUZZ=key -fs 798 POST Request fuzzing:\n# for this, instead of adding to URL # we need to fuzz HTTP data # in PHP, POST data 'content-type' can only accept \"application/x-www-form-urlencoded\" ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://admin.academy.htb:35182/admin/admin.php -X POST -d 'FUZZ=key' -H 'Content-Type: application/x-www-form-urlencoded' # -X POST as we are sending POST request # filter by size ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://admin.academy.htb:35182/admin/admin.php -X POST -d 'FUZZ=key' -H 'Content-Type: application/x-www-form-urlencoded' -fs 798 # to view the response with fuzzing, use curl curl http://admin.academy.htb:35182/admin/admin.php -X POST -d 'id=key' -H 'Content-Type: application/x-www-form-urlencoded' Value fuzzing:\n# create custom wordlist of 1-1000 to fuzz ID value for i in $(seq 1 1000); do echo $i \u003e\u003e ids.txt; done ffuf -w ids.txt:FUZZ -u http://admin.academy.htb:35182/admin/admin.php -X POST -d 'id=FUZZ' -H 'Content-Type: application/x-www-form-urlencoded' # use filter size ffuf -w ids.txt:FUZZ -u http://admin.academy.htb:35182/admin/admin.php -X POST -d 'id=FUZZ' -H 'Content-Type: application/x-www-form-urlencoded' -fs 768 ",
+  "wordCount" : "434",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://example.org/posts/hack-the-box/wow/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Cybersec Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://example.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://example.org/" accesskey="h" title="Cybersec Blog (Alt + H)">Cybersec Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="attacking-web-apps-with-ffuf">Attacking Web Apps with ffuf<a hidden class="anchor" aria-hidden="true" href="#attacking-web-apps-with-ffuf">#</a></h1>
+<ol>
+<li><a href="#basic-fuzzing">Basic Fuzzing</a></li>
+<li><a href="#domain-fuzzing">Domain Fuzzing</a></li>
+<li><a href="#parameter-fuzzing">Parameter Fuzzing</a></li>
+</ol>
+<h2 id="basic-fuzzing">Basic Fuzzing<a hidden class="anchor" aria-hidden="true" href="#basic-fuzzing">#</a></h2>
+<ul>
+<li>
+<p>Fuzzing - testing technique that sends various types of user input to an interface and check its reaction</p>
+</li>
+<li>
+<p>Directory fuzzing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt:FUZZ -u http://94.237.63.93:35182/FUZZ -s
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -s for silent</span>
+</span></span></code></pre></div></li>
+<li>
+<p>Page fuzzing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># fuzz extensions with a common term like &#39;index&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># we can also use two wordlists if needed</span>
+</span></span><span style="display:flex;"><span>ffuf -w /usr/share/seclists/Discovery/Web-Content/web-extensions.txt:FUZZ -u http://94.237.63.93:35182/blog/indexFUZZ -s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># checking for files with php extension</span>
+</span></span><span style="display:flex;"><span>ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt:FUZZ -u http://94.237.63.93:35182/blog/FUZZ.php -s
+</span></span></code></pre></div></li>
+<li>
+<p>Recursive fuzzing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt:FUZZ -u http://94.237.63.93:35182/FUZZ -recursion -recursion-depth <span style="color:#ae81ff">1</span> -e .php -v -s
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># recursive depth can be increased, but will take more time</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -e to specify extension</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># check with other directories like /blog and /forum manually as well</span>
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="domain-fuzzing">Domain Fuzzing<a hidden class="anchor" aria-hidden="true" href="#domain-fuzzing">#</a></h2>
+<ul>
+<li>
+<p>For IP-to-domain mapping, we can add domain names to local file using <code>sudo sh -c 'echo &quot;SERVER_IP  academy.htb&quot; &gt;&gt; /etc/hosts'</code>; then we can visit the website at <a href="http://academy.htb:PORT">http://academy.htb:PORT</a></p>
+</li>
+<li>
+<p>Sub-domain fuzzing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># search for websites in format *.inlanefreight.com</span>
+</span></span><span style="display:flex;"><span>ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u https://FUZZ.inlanefreight.com/ -s
+</span></span></code></pre></div></li>
+<li>
+<p>Vhost fuzzing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># vhost is a subdomain on same server with same IP</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># but single IP can have multiple websites</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># vhosts may or may not have public DNS records, unlike subdomains which have public DNS records</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># here we are fuzzing HTTP headers</span>
+</span></span><span style="display:flex;"><span>ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u http://academy.htb:35182/ -H <span style="color:#e6db74">&#39;Host: FUZZ.academy.htb&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># this will give incorrect results, so we need to filter by size</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u http://academy.htb:35182/ -H <span style="color:#e6db74">&#39;Host: FUZZ.academy.htb&#39;</span> -fs <span style="color:#ae81ff">986</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># once we get the result, we can add that page to /etc/hosts file as well</span>
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="parameter-fuzzing">Parameter Fuzzing<a hidden class="anchor" aria-hidden="true" href="#parameter-fuzzing">#</a></h2>
+<ul>
+<li>
+<p>GET Request fuzzing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># fuzzing for parameters added in URL</span>
+</span></span><span style="display:flex;"><span>ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://admin.academy.htb:35182/admin/admin.php?FUZZ<span style="color:#f92672">=</span>key
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># again, filter by correct size to get correct response</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://admin.academy.htb:35182/admin/admin.php?FUZZ<span style="color:#f92672">=</span>key -fs <span style="color:#ae81ff">798</span>
+</span></span></code></pre></div></li>
+<li>
+<p>POST Request fuzzing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># for this, instead of adding to URL</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># we need to fuzz HTTP data</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># in PHP, POST data &#39;content-type&#39; can only accept &#34;application/x-www-form-urlencoded&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://admin.academy.htb:35182/admin/admin.php -X POST -d <span style="color:#e6db74">&#39;FUZZ=key&#39;</span> -H <span style="color:#e6db74">&#39;Content-Type: application/x-www-form-urlencoded&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -X POST as we are sending POST request</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># filter by size</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://admin.academy.htb:35182/admin/admin.php -X POST -d <span style="color:#e6db74">&#39;FUZZ=key&#39;</span> -H <span style="color:#e6db74">&#39;Content-Type: application/x-www-form-urlencoded&#39;</span> -fs <span style="color:#ae81ff">798</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># to view the response with fuzzing, use curl</span>
+</span></span><span style="display:flex;"><span>curl http://admin.academy.htb:35182/admin/admin.php -X POST -d <span style="color:#e6db74">&#39;id=key&#39;</span> -H <span style="color:#e6db74">&#39;Content-Type: application/x-www-form-urlencoded&#39;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>Value fuzzing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># create custom wordlist of 1-1000 to fuzz ID value</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>seq <span style="color:#ae81ff">1</span> 1000<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> echo $i &gt;&gt; ids.txt; <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ffuf -w ids.txt:FUZZ -u http://admin.academy.htb:35182/admin/admin.php -X POST -d <span style="color:#e6db74">&#39;id=FUZZ&#39;</span> -H <span style="color:#e6db74">&#39;Content-Type: application/x-www-form-urlencoded&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># use filter size</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ffuf -w ids.txt:FUZZ -u http://admin.academy.htb:35182/admin/admin.php -X POST -d <span style="color:#e6db74">&#39;id=FUZZ&#39;</span> -H <span style="color:#e6db74">&#39;Content-Type: application/x-www-form-urlencoded&#39;</span> -fs <span style="color:#ae81ff">768</span>
+</span></span></code></pre></div></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="https://example.org/">Cybersec Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
